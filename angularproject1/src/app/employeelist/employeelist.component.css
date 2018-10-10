@@ -1,0 +1,11 @@
+.card-body{
+    padding: 30px;
+    margin: 10px;
+    /* background-color: #D1584E; */
+    background-color: grey;
+}
+
+.card{
+
+    margin-top: 50px;
+}

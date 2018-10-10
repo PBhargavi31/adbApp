@@ -1,0 +1,51 @@
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-sm-9 m-auto">
+      <h3 class="mb-5 mt-5">
+
+        
+        Contact</h3>
+
+      <form class="form" #f="ngForm" novalidate (ngSubmit)="f.valid && save()">
+        <div class="mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+              </span>
+            </div>
+
+            <input type="text" class="form-control" id="fnm" name="fnm" required minlength="5" maxlength="15"
+              [(ngModel)]="employee.firstName" #fnm=ngModel placeholder="First Name" />
+
+            <input type="text" class="form-control" id="lnm" name="lnm" required minlength="5" maxlength="15"
+              [(ngModel)]="employee.lastName" #lnm=ngModel placeholder="Last Name" />
+
+          </div>
+
+          <div class="alert alert-danger" *ngIf="(fnm.errors && (fnm.touched || fnm.darty))||(lnm.errors && (lnm.touched || lnm.darty))">
+            
+            <p *ngIf="(fnm.errors && (fnm.touched || fnm.darty))">Please see that First Name <strong>
+                <span *ngIf="fnm.errors.required">is not left blank</span>
+                <span *ngIf="fnm.errors.minlength">is atleast 5 chars in length</span>
+              </strong>
+            </p>
+
+            <p *ngIf="(lnm.errors && (lnm.touched || lnm.darty))">Please see that Last Name <strong>
+                <span *ngIf="lnm.errors.required">is not left blank</span>
+                <span *ngIf="lnm.errors.minlength">is atleast 5 chars in length</span>
+              </strong>
+            </p>
+          </div>
+        </div>
+
+ 
+       
+         
+       
+        <div>
+          <button class="btn btn-block btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

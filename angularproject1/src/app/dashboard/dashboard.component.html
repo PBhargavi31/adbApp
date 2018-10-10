@@ -1,0 +1,19 @@
+<div class="container">
+    <h4> Number of employees:</h4>
+
+    <div class="container">
+      <div class="card-columns">
+        <div class="card" *ngFor="let g of ['IT','Support','HR']">
+          <div class="card-body text-center">
+            <h4 class="card-title">
+              {{g}}:
+              <span class="badge badge-info">
+                {{employees|deptCount:g}} /
+                {{employees.length}}
+              </span>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

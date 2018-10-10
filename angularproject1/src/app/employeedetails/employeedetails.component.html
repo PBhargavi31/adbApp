@@ -1,0 +1,46 @@
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-sm-9 m-auto" *ngIf="!contact">
+      <h3>
+      </h3>
+    </div>
+    <div class="col-sm-9 m-auto" *ngIf="contact">
+      <h3 class="mb-5 mt-5">
+        Contact Details
+      </h3>
+      <div class="card">
+        <div class="card-header">
+          <h5 class="float-left">{{contact.firstName}} {{contact.lastName}}</h5>
+          <div class="btn-group float-right">
+              <a routerLink="/editContact/{{contact.contactId}}" class="btn">
+              </a>
+              <a routerLink="/delContact/{{contact.contactId}}" class="btn">
+              </a>
+  
+            </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3">
+              <img [src]="contact.gender=='GENT'?gentLogo:ladyLogo" class="img-fluid" />
+            </div>
+            <div class="col-md-9">
+
+              <p>
+                 {{contact.emailId}}
+              </p>
+              <p>
+                 {{contact.mobileNumber}}
+              </p>
+              <p>
+                 {{contact.dateOfBirth}}
+              </p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+</div>

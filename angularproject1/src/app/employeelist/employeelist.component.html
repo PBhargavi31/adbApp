@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <div class="card-columns">
+    <div class="card w-50 p-3" *ngFor="let e of employees">
+
+      <div class="card-body">
+        <h6 class="card-title">{{e.empName}} </h6>
+        <p class="card-text">
+          {{e.basic}}
+          <br /> {{e.hra}}
+          <br/>{{e.dept}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
